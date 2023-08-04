@@ -1,0 +1,76 @@
+.carousel-item img {
+  border-radius: 10px;
+  height: 200px;
+  width: 100%;
+}
+.carousel-indicators {
+  display: none !important;
+}
+.carousel-control-prev {
+  left: -4% !important;
+}
+.carousel-control-next {
+  right: -4% !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #a6a5a5;
+  border-radius: 50px;
+  border: 1px solid rgb(255, 255, 255);
+  width: 25px !important;
+  height: 25px !important;
+}
+.fiyat {
+  text-align: right;
+  font-weight: bold;
+  font-size: 30px;
+}
+.stok {
+  text-align: right;
+}
+.ctg span {
+  color: #ffffff;
+  border-radius: 17px;
+  padding: 3px 7px 3px 7px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ 
+.text p {
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  overflow:hidden;
+}
+
+.rating {
+  text-align: center;
+}
+.card {
+  min-height: 450px !important;
+}
+
+.rating span {
+  font-size: 24px;
+}
+.has-search .form-control {
+  padding-left: 1.5rem;
+}
+
+.has-search svg {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 1rem;
+  height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+  margin-left: 4px;
+}
+
+#dropdown-basic{
+  width: 100%;
+}
