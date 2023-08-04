@@ -74,3 +74,6 @@
 #dropdown-basic{
   width: 100%;
 }
+.form-check{
+  padding-left: 2em !important;
+}

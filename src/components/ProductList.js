@@ -6,21 +6,25 @@ import Category from "./Category";
 
 const ProductList = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const categories = [...new Set(Data.map((item) => item.brand))]; 
+  const categories = [...new Set(Data.map((item) => item.brand))];
 
   const filteredProducts = Data.filter(
     (product) =>
       product.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-      (!selectedCategory || product.brand === selectedCategory|| selectedCategory==="All")
+      (selectedCategories.length === 0 || selectedCategories.includes(product.brand) || selectedCategories.includes("All"))
   );
+
+  const handleSelectedCategories = (selectedCategories) => {
+    setSelectedCategories(selectedCategories);
+  };
 
   return (
     <div className="container">
       <div className="row">
         <Search onSearch={setSearchQuery} />
-        <Category categories={categories} onSelectCategory={setSelectedCategory} />
+        <Category categories={categories} onSelectedCategories={handleSelectedCategories} />
         {filteredProducts.map((productItem) => (
           <Product
             key={productItem.id}
