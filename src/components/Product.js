@@ -42,12 +42,13 @@ function Product({ images, title, description, brand, price, stock, rating }) {
   };
 
   const brandName = Array.isArray(brand) ? brand[0] : brand;
+ 
   return (
     <div className="col-12 col-lg-4 my-5">
       <div className="row m-0">
         <div className="card">
           <div className="col-12">
-            <Carousel className="p-3">
+            <Carousel className="p-3" controls={images && images.length>1}> 
               {images &&
                 images.map(
                   (

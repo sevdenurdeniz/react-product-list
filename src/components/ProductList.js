@@ -13,7 +13,9 @@ const ProductList = () => {
   const filteredProducts = Data.filter(
     (product) =>
       product.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
-      (selectedCategories.length === 0 || selectedCategories.includes(product.brand) || selectedCategories.includes("All"))
+      (selectedCategories.length === 0 ||
+        selectedCategories.includes(product.brand) ||
+        selectedCategories.includes("All"))
   );
 
   const handleSelectedCategories = (selectedCategories) => {
@@ -24,7 +26,11 @@ const ProductList = () => {
     <div className="container">
       <div className="row">
         <Search onSearch={setSearchQuery} />
-        <Category categories={categories} onSelectedCategories={handleSelectedCategories} />
+        <Category
+          categories={categories}
+          selectedCategories={selectedCategories}
+          onSelectedCategories={handleSelectedCategories}
+        />
         {filteredProducts.map((productItem) => (
           <Product
             key={productItem.id}
